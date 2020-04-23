@@ -18,7 +18,31 @@ namespace MarkLogicDotNet.ConsoleApp
 
             _client = new MarkLogicClient(config);
 
-            GetDocument();
+            //GetDocument();
+
+            SaveDocument();
+        }
+
+        static void SaveDocument()
+        {
+            var req = new DocumentRequest
+            {
+                Uri = "sample1.json",
+                Database = "test",
+                Content = "{\"name\":\"Raj2 Save2\"}"
+
+            };
+            var doc = _client.SaveDocument(req).GetAwaiter().GetResult();
+
+            if (doc.Success)
+            {
+                Console.WriteLine("Successful", doc.Data);
+            }
+            else
+            {
+                Console.WriteLine(doc.ErrorMessage);
+            }
+
         }
 
         static void GetDocument()

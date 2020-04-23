@@ -113,43 +113,46 @@ namespace MarkLogicDotNet
         /// </summary>
         protected void InitApi()
         {
-            Console.WriteLine("Api ", _uri);
             var clientHandler = new HttpClientHandler();
-
             if (_crendentails != null)
             {
                 clientHandler.Credentials = _crendentails;
             }
-
             var httpClient = new HttpClient(clientHandler)
             {
                 BaseAddress = _uri
             };
-
             if (!string.IsNullOrWhiteSpace(_authHeader))
             {
                 httpClient.DefaultRequestHeaders.Add("Authorization", _authHeader);
             }
-
             _api = RestService.For<IMarkLogicApi>(httpClient);
         }
 
         #region Document api methods
 
-        /// <summary>
-        /// Creates a document
-        /// </summary>
-        public void CreateDocument()
+        public async Task<BaseResponse<string>> SaveDocument(DocumentRequest docRequest)
         {
+            if (docRequest == null)
+            {
+                throw new NullReferenceException("Invalid document request data. docRequest cannot be null");
+            }
 
-        }
+            if (string.IsNullOrEmpty(docRequest.Uri))
+            {
+                throw new NullReferenceException("Invalid document request data. docRequest Uri cannot be null or empty");
+            }
 
-        /// <summary>
-        /// Updates a document
-        /// </summary>
-        public void UpdateDocument()
-        {
+            if (string.IsNullOrEmpty(docRequest.Content))
+            {
+                throw new NullReferenceException("Invalid document request data. docRequest Content cannot be null or empty");
+            }
 
+            var content = docRequest.Content;
+            docRequest.Content = null;
+            var response = await ParseApiRequest(() => Api.SaveDocument(docRequest, content));
+
+            return response;
         }
 
         /// <summary>
@@ -186,10 +189,7 @@ namespace MarkLogicDotNet
 
             try
             {
-                Console.WriteLine("Calling method");
                 var message = await apiMethod();
-
-                Console.WriteLine("Message received ", message);
                 response.Success = message.IsSuccessStatusCode;
 
                 if (response.Success)
