@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkLogicDotNet", "MarkLogicDotNet\MarkLogicDotNet.csproj", "{B8167075-8B29-4B99-8CD0-D89FD87DA550}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkLogicDotNet.Tests", "MarkLogicDotNet.Tests\MarkLogicDotNet.Tests.csproj", "{448CB641-4C03-4F86-B0C7-2EC289EA1A92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkLogicDotNet.ConsoleApp", "MarkLogicDotNet.ConsoleApp\MarkLogicDotNet.ConsoleApp.csproj", "{AF573E86-A335-46FF-BEA7-D4DA847DE94C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8167075-8B29-4B99-8CD0-D89FD87DA550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8167075-8B29-4B99-8CD0-D89FD87DA550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8167075-8B29-4B99-8CD0-D89FD87DA550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8167075-8B29-4B99-8CD0-D89FD87DA550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{448CB641-4C03-4F86-B0C7-2EC289EA1A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{448CB641-4C03-4F86-B0C7-2EC289EA1A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{448CB641-4C03-4F86-B0C7-2EC289EA1A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{448CB641-4C03-4F86-B0C7-2EC289EA1A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF573E86-A335-46FF-BEA7-D4DA847DE94C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF573E86-A335-46FF-BEA7-D4DA847DE94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF573E86-A335-46FF-BEA7-D4DA847DE94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF573E86-A335-46FF-BEA7-D4DA847DE94C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
